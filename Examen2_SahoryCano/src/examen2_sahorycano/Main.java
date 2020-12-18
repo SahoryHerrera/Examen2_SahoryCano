@@ -21,6 +21,23 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+
+        Hilo = new Hilo(this.barra, this.tabla_proceso);
+        Hilo.start();
+        barra.setValue(0);
+        ADMINISTRADOR_1 ap = new ADMINISTRADOR_1("./cliente.SSCH");
+        ap.cargarArchivo();
+        String x = "";
+        x = ap.getLista() + "";
+        System.out.println(x);
+        CLIENTE cl = null;
+        for (int i = 0; i < ap.getLista().size(); i++) {
+            cl = (CLIENTE) ap.getLista().get(i);
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) compradores.getModel();
+            compradores.setModel(modelo2);
+            modelo2.addElement(cl);
+
+        }
     }
 
     /**
@@ -89,7 +106,7 @@ public class Main extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(438, 438, 438)
+                .addGap(436, 436, 436)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -198,7 +215,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(sp_papas, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                     .addComponent(sp_refrescos, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                     .addComponent(sp_pie))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,6 +266,8 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tabla_proceso);
+
+        barra.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Proceso");
@@ -318,7 +337,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_compra)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -413,10 +432,10 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tab2))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -452,7 +471,6 @@ public class Main extends javax.swing.JFrame {
             pies = (int) sp_pie.getValue();
             total = piezas + biscuit + pure + papas + fresco + pies;
             CLIENTE c = new CLIENTE(nombre, ap, edad, tarjeta, total);
-            // public Ordenes(int piezas, int biscuit, int pure, int papas, int fresco, int pie, int numero)
             ORDEN o = new ORDEN(piezas, biscuit, pure, papas, fresco, pies, numorden);
             c.getHistorial().add(o);
             ADMINISTRADOR_2 ap2
@@ -461,7 +479,7 @@ public class Main extends javax.swing.JFrame {
             ap2.getLista().add(c);
             ap2.escribirArchivo();
 
-            ADMINISTRADOR_1 a = new ADMINISTRADOR_1("./clientes.cbm");
+            ADMINISTRADOR_1 a = new ADMINISTRADOR_1("./cliente.SSCH");
             a.cargarArchivo();
             a.setclie(c);
             a.escribirArchivo();
@@ -470,14 +488,13 @@ public class Main extends javax.swing.JFrame {
             modelo2.addElement(c);
             compradores.setModel(modelo2);
 
-   
-            h1.setE(c);
-            h1.setAvanzar(true);
-            JOptionPane.showMessageDialog(this, "GRACIAS POR ORDENAR");
+            JOptionPane.showMessageDialog(this, "¡Su compra se realizo con exito!");
+            Hilo.setE(c);
+            Hilo.setAvanzar(true);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "ERROR AL CREAR");
-            //System.out.println(e.getStackTrace()); 
+            JOptionPane.showMessageDialog(this, "¡Error al Ordenar!");
+
         }
     }//GEN-LAST:event_btn_compraMouseClicked
 
@@ -489,16 +506,16 @@ public class Main extends javax.swing.JFrame {
 
             CLIENTE c = (CLIENTE) modelo.getSelectedItem();
 
-            for (ORDEN p : c.getHistorial()) {
+            for (ORDEN Orden : c.getHistorial()) {
 
                 Object[] newRow = {
-                    p.getNumero(),
-                    p.getPie(),
-                    p.getPiezas(),
-                    p.getBiscuit(),
-                    p.getPure(),
-                    p.getPapas(),
-                    p.getFresco(),};
+                    Orden.getNumero(),
+                    Orden.getPie(),
+                    Orden.getPiezas(),
+                    Orden.getBiscuit(),
+                    Orden.getPure(),
+                    Orden.getPapas(),
+                    Orden.getFresco(),};
                 modelo2.addRow(newRow);
 
             }
@@ -540,7 +557,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-    Hilo h1;
+    Hilo Hilo;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField Tf_tarjeta;
     private javax.swing.JProgressBar barra;

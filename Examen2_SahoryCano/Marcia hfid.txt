@@ -1,0 +1,12 @@
+Orden: 80;
+Fecha: 5;
+Nombre: Marcia hfid;
+Apellido: ghjfd;
+Edad: 1;
+Tarjeta: 345.0;
+Total Complementos: 8.0;
+Piezas: 2;
+Papas: 1;
+Frescos: 1;
+Pures: 1;
+Pies: 1;
