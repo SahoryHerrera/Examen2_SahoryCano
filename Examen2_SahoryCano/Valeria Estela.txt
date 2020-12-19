@@ -1,0 +1,10 @@
+Orden: 63;
+Fecha: 5;
+Nombre: Valeria Estela;
+Apellido: Flores Cruz;
+Total Complementos: 8.0;
+Piezas: 0;
+Papas: 1;
+Frescos: 1;
+Pures: 1;
+Pies: 3;

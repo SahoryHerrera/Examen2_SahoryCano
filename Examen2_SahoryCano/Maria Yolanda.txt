@@ -1,0 +1,10 @@
+Orden: 99;
+Fecha: 5;
+Nombre: Maria Yolanda;
+Apellido: Flores Cruz;
+Total Complementos: 10.0;
+Piezas: 2;
+Papas: 1;
+Frescos: 1;
+Pures: 1;
+Pies: 3;

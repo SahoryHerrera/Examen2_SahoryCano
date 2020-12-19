@@ -1,0 +1,10 @@
+Orden: 87;
+Fecha: 5;
+Nombre: Mario Fernandez;
+Apellido: Cortez Catillo;
+Total Complementos: 6.0;
+Piezas: 2;
+Papas: 1;
+Frescos: 1;
+Pures: 1;
+Pies: 0;
