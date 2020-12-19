@@ -16,27 +16,24 @@ public class CLIENTE implements Serializable {
     private static final long SerialVersionUID = 8989L;
     private String nombres;
     private String apellidos;
-    private int edad;
-    private float ID;
+
     private float total;
     private ArrayList<ORDEN> lista = new ArrayList();
 
     public CLIENTE() {
     }
 
-    public CLIENTE(String nombre, String apellido, int edad, float Id, float total) {
+    public CLIENTE(String nombre, String apellido, float total) {
         this.nombres = nombre;
         this.apellidos = apellido;
-        this.edad = edad;
-        this.ID = Id;
+
         this.total = total;
     }
 
-    public CLIENTE(String nombre, String apellido, int edad, float Id) {
+    public CLIENTE(String nombre, String apellido, int edad) {
         this.nombres = nombre;
         this.apellidos = apellido;
-        this.edad = edad;
-        this.ID = Id;
+
     }
 
     public float getTotal() {
@@ -63,21 +60,7 @@ public class CLIENTE implements Serializable {
         this.apellidos = apellido;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public float getTarjeta() {
-        return ID;
-    }
-
-    public void setTarjeta(float tarjeta) {
-        this.ID = tarjeta;
-    }
+   
 
     public ArrayList<ORDEN> getHistorial() {
         return lista;

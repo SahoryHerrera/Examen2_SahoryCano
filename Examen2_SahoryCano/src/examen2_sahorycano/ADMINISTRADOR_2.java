@@ -64,10 +64,6 @@ public class ADMINISTRADOR_2 {
                     bw.newLine();
                     bw.write("Apellido: " + t.getApellido() + ";");
                     bw.newLine();
-                    bw.write("Edad: " + t.getEdad() + ";");
-                    bw.newLine();
-                    bw.write("Tarjeta: " + t.getTarjeta() + ";");
-                    bw.newLine();
                     bw.write("Total Complementos: " + t.getTotal() + ";");
                     bw.newLine();
                     bw.write("Piezas: " + t.getHistorial().get(i).getPiezas() + ";");
@@ -98,7 +94,7 @@ public class ADMINISTRADOR_2 {
                 sc = new Scanner(archivo);
                 sc.useDelimiter(";");
                 while (sc.hasNext()) {
-                    lista.add(new CLIENTE(sc.next(), sc.next(), sc.nextInt(), sc.nextFloat(), sc.nextFloat())
+                    lista.add(new CLIENTE(sc.next(), sc.next(), sc.nextInt())
                     );
                 }
             } catch (Exception ex) {
