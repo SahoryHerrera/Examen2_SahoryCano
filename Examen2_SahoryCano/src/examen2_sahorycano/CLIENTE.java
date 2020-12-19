@@ -14,29 +14,29 @@ import java.util.Scanner;
 public class CLIENTE implements Serializable {
 
     private static final long SerialVersionUID = 8989L;
-    private String nombre;
-    private String apellido;
+    private String nombres;
+    private String apellidos;
     private int edad;
-    private float tarjeta;
+    private float ID;
     private float total;
     private ArrayList<ORDEN> lista = new ArrayList();
 
     public CLIENTE() {
     }
 
-    public CLIENTE(String nombre, String apellido, int edad, float tarjeta, float total) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public CLIENTE(String nombre, String apellido, int edad, float Id, float total) {
+        this.nombres = nombre;
+        this.apellidos = apellido;
         this.edad = edad;
-        this.tarjeta = tarjeta;
+        this.ID = Id;
         this.total = total;
     }
 
-    public CLIENTE(String nombre, String apellido, int edad, float tarjeta) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public CLIENTE(String nombre, String apellido, int edad, float Id) {
+        this.nombres = nombre;
+        this.apellidos = apellido;
         this.edad = edad;
-        this.tarjeta = tarjeta;
+        this.ID = Id;
     }
 
     public float getTotal() {
@@ -48,19 +48,19 @@ public class CLIENTE implements Serializable {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombres;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombres = nombre;
     }
 
     public String getApellido() {
-        return apellido;
+        return apellidos;
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        this.apellidos = apellido;
     }
 
     public int getEdad() {
@@ -72,11 +72,11 @@ public class CLIENTE implements Serializable {
     }
 
     public float getTarjeta() {
-        return tarjeta;
+        return ID;
     }
 
     public void setTarjeta(float tarjeta) {
-        this.tarjeta = tarjeta;
+        this.ID = tarjeta;
     }
 
     public ArrayList<ORDEN> getHistorial() {
@@ -89,7 +89,7 @@ public class CLIENTE implements Serializable {
 
     @Override
     public String toString() {
-        return nombre;
+        return nombres;
     }
   
 

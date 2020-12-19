@@ -291,9 +291,9 @@ public class Main extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel12)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -360,7 +360,7 @@ public class Main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Numero Orden", "Pies", "Piezas", "Biscuit", "Pure", "Papas", "Fresco"
+                "Codigo", "Candidad Pies", "Cantidad Piezas", "Cantidad Biscuit", "Cantidad Pure", "Cantidad Papas", "Cantidad Fresco"
             }
         ));
         jScrollPane2.setViewportView(tabla_info);
@@ -459,7 +459,7 @@ public class Main extends javax.swing.JFrame {
             String nombre = tf_nombres.getText();
             String ap = tf_Apellidos.getText();
             int edad = (int) sp_Edad.getValue();
-            float tarjeta = Float.parseFloat(Tf_tarjeta.getText());
+            float Id = Float.parseFloat(Tf_tarjeta.getText());
             float total = 0;
             int piezas = 0, biscuit = 0, pure = 0, papas = 0, fresco = 0, pies = 0;
             int numorden = 1 + r.nextInt(100);
@@ -470,7 +470,7 @@ public class Main extends javax.swing.JFrame {
             fresco = (int) sp_refrescos.getValue();
             pies = (int) sp_pie.getValue();
             total = piezas + biscuit + pure + papas + fresco + pies;
-            CLIENTE c = new CLIENTE(nombre, ap, edad, tarjeta, total);
+            CLIENTE c = new CLIENTE(nombre, ap, edad, Id, total);
             ORDEN o = new ORDEN(piezas, biscuit, pure, papas, fresco, pies, numorden);
             c.getHistorial().add(o);
             ADMINISTRADOR_2 ap2
