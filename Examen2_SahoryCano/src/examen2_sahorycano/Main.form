@@ -269,7 +269,7 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Ingrese Tarjeta"/>
+                            <Property name="text" type="java.lang.String" value="Ingrese ID"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JFormattedTextField" name="Tf_tarjeta">
@@ -307,7 +307,7 @@
                                       <Component id="sp_refrescos" pref="45" max="32767" attributes="0"/>
                                       <Component id="sp_pie" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="87" max="32767" attributes="0"/>
+                                  <EmptySpace pref="100" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -423,7 +423,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                                  <EmptySpace pref="47" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
